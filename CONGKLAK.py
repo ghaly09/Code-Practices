@@ -1,0 +1,5 @@
+banyaklubang = int(input())
+banyakbiji = list(map(int, input() .split()))
+d = sorted(banyakbiji)
+banyakbener = d.count(max(d))
+print("%d %d" % (max(d), banyakbener))
