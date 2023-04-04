@@ -11,7 +11,8 @@ var twoSum = function (nums, target) {
   let result = [];
   nums.filter((value, index) => {
     for (let i = 0; i < nums.length; i++) {
-      if (value + (index != i ? nums[i] : false) === target) {
+      const newLocal = value * target;
+      if (value + (index != i ? nums[i] : newLocal) == target) {
         return result.push(index);
       }
     }
@@ -21,9 +22,14 @@ var twoSum = function (nums, target) {
 };
 
 // Test Run
-console.log(twoSum([2, 7, 11, 15], 9));
+// console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([3, 2, 4], 6));
 console.log(twoSum([3, 3], 6));
+console.log(twoSum([-10, -1, -18, -19], -19));
+console.log(twoSum([0, 4, 3, 0], 0));
+console.log(twoSum([-11, 7, 3, 2, 1, 7, -10, 11, 21, 3], 11));
+console.log(twoSum([0, 3, -3, 4, -1], -1));
+// twoSum([-10, -1, -18, -19], -19);
 
 /**
  * OUTPUT EXAMPLE
