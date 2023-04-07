@@ -32,6 +32,33 @@ var lengthOfLongestSubstring = function (s) {
     let finalResult = Object.keys(result).length;
     return finalResult;
   }
+
+  if (s.length == 1 && s != "") {
+    return (result = 1);
+  } else if (s == "") {
+    return (result = 0);
+  } else {
+    let longest = "";
+    let current = "";
+    const checkChar = new Set();
+
+    for (let char of s) {
+      if (!checkChar.has(char)) {
+        current += char;
+        checkChar.add(char);
+      } else {
+        if (current.length > longest.length) {
+          longest = current;
+        }
+        current = "";
+        checkChar.clear();
+      }
+    }
+
+    return longest.length > current.length
+      ? (result = longest.length)
+      : (result = current.length);
+  }
 };
 
 console.log(lengthOfLongestSubstring("abcabcbb"));
