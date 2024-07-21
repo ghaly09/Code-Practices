@@ -1,0 +1,15 @@
+{
+  "name": "Typescript-codes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node",
+    "dev": "ts-node"
+  }
+}
